@@ -70,6 +70,7 @@ class CausalEstimator:
         null_estimates = np.zeros(num_simulations)
         for i in range(num_simulations):
             self._outcome = np.random.permutation(self._outcome)
+            ##equal to the shuffle of the treatment and maintain the treatment result
             est = self._estimate_effect()
             null_estimates[i] = est.value
 
